@@ -1,50 +1,44 @@
 <!doctype html>
 <title>Example</title>
 <style>
-* {
-  box-sizing: border-box; 
-}
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
-}
-#main {
-  display: flex;
-  flex: 1;
-}
-#main > article {
-  flex: 1;
-}
-#main > nav, 
-#main > aside {
-  flex: 0 0 20vw;
-  background: beige;
-}
-#main > nav {
-  order: -1;
-}
-header, footer {
-  background: yellowgreen;
-  height: 20vh;
-}
-header, footer, article, nav, aside {
-  padding: 1em;
-}
-@media screen and (max-width: 575px) {
-  #main {
-    flex-direction: column;
+  .wrapper {
+    background-color: whitesmoke;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
   }
-}
+  .form-row {
+    padding: .5em;
+  }
+  .form-row > label {
+    padding: .5em 1em .5em 0;
+  }
+  .form-row > input,
+  .form-row > button {
+    padding: .5em;
+  }
+  .form-row > button {
+   background: gray;
+   color: white;
+   border: 0;
+  }
 </style>
-<body>
-  <header>Header</header>
-  <div id="main">
-    <article>Article</article>
-    <nav>Nav</nav>
-    <aside>Aside</aside>
-  </div>
-  <footer>Footer</footer>
-</body>
-
+<form>
+  <ul class="wrapper">
+    <li class="form-row">
+      <label for="name">Name</label>
+      <input type="text" id="name">
+    </li>
+    <li class="form-row">
+      <label for="townborn">Town you were born in</label>
+      <input type="text" id="townborn">
+    </li>
+    <li class="form-row">
+      <label for="email">Email Address</label>
+      <input type="email" id="email">
+    </li>
+    <li class="form-row">
+      <button type="submit">Submit</button>
+    </li>
+  </ul>
+</form>
